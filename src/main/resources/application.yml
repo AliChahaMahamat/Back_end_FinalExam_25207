@@ -6,13 +6,13 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/BankingApp
-    username: postgres
-    password: ali123
-    driver-class-name: org.postgresql.Driver  # Added PostgreSQL driver
+    url: ${DB_URL} # Environment variable for database URL
+    username: ${DB_USERNAME} # Environment variable for database username
+    password: ${DB_PASSWORD} # Environment variable for database password
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update  # Use 'update' or 'create-drop' based on your need
+      ddl-auto: update # Ensure this aligns with your database migration strategy
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -20,8 +20,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username:
-    password:
+    username: ${MAIL_USERNAME} # Environment variable for email username
+    password: ${MAIL_PASSWORD} # Environment variable for email password
     properties:
       mail:
         smtp:
