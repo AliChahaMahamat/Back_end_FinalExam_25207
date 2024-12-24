@@ -6,9 +6,9 @@ server:
 
 spring:
   datasource:
-    url: ${DB_URL} # Environment variable for database URL
-    username: ${DB_USERNAME} # Environment variable for database username
-    password: ${DB_PASSWORD} # Environment variable for database password
+    url: ${postgresql://postgres:yRGFYKpfTsKVwhrurdhaiXYvUaawRpyf@postgres.railway.internal:5432/railway} # Environment variable for database URL
+    username: ${postgres} # Environment variable for database username
+    password: ${yRGFYKpfTsKVwhrurdhaiXYvUaawRpyf} # Environment variable for database password
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
