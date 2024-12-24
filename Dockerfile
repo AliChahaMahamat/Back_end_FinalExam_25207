@@ -1,13 +1,29 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:21-jdk-slim
+# Use an official OpenJDK image
+FROM openjdk:21-jdk-slim as builder
 
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Copy the jar file from the target directory to the container
-COPY target/Back_End_Banking_System-0.0.1-SNAPSHOT.jar /app/app.jar
+# Copy Maven wrapper and pom.xml
+COPY mvnw pom.xml ./
+COPY .mvn .mvn
 
-# Expose the correct port (8083)
+# Copy source code
+COPY src src
+
+# Build the application (creates JAR file in target directory)
+RUN ./mvnw clean package -DskipTests
+
+# Final image for running the application
+FROM openjdk:21-jdk-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy the JAR file from the builder stage
+COPY --from=builder /app/target/Back_End_Banking_System-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose port 8083
 EXPOSE 8083
 
 # Run the application
