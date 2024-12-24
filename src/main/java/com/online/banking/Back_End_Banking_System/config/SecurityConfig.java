@@ -53,6 +53,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/signup", "/api/auth/login","/api/password-reset/forgot-password","/api/password-reset/reset-password").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/user/**").hasRole("USER")
+                        .requestMatchers("/uploads/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(ex -> ex

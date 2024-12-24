@@ -1,9 +1,10 @@
 package com.online.banking.Back_End_Banking_System.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "accounts") // Explicit table name
+@Table(name = "accounts")
 public class Account {
 
     @Id
@@ -11,16 +12,17 @@ public class Account {
     private Long id;
 
     @Column(nullable = false)
-    private String accountType; // Dropdown: Saving, etc.
+    private String accountType;
 
     @Column(nullable = false, unique = true)
-    private String accountNumber; // 10-digit auto-generated
+    private String accountNumber;
 
     @Column(nullable = false)
-    private Double balance = 0.0; // Default starting balance
+    private Double balance = 0.0;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     private User user;
 
     // Constructors
@@ -32,8 +34,7 @@ public class Account {
         this.balance = balance;
         this.user = user;
     }
-
-    // Getters and Setters
+// Getters and Setters
     public Long getId() {
         return id;
     }

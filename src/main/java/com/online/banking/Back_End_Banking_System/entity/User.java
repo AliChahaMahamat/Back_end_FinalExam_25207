@@ -1,5 +1,6 @@
 package com.online.banking.Back_End_Banking_System.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -38,20 +39,24 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(name = "profile_picture", length = 255)
+    private String profilePicture; // File path to the profile picture
+
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
-    private Set<Role> roles = new HashSet<>(); // Set of roles for the user
+    private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Account> accounts;
 
     // Constructor
     public User() {
-        this.roles.add(Role.ROLE_USER); // Default role
+        this.roles.add(Role.ROLE_USER);
     }
 
-    // Getters and Setters
+// Getters and Setters
     public Long getId() {
         return id;
     }
@@ -123,6 +128,14 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
 
     public Set<Role> getRoles() {
         return roles;
