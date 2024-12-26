@@ -954,3 +954,35 @@ Caused by: java.lang.RuntimeException: Driver org.postgresql.Driver claims to no
 2024-12-24T16:20:32.359+02:00  INFO 20144 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-12-24T16:20:32.382+02:00  INFO 20144 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-12-24T16:20:32.424+02:00  INFO 20144 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-24T21:07:10.404+02:00  INFO 11072 --- [main] b.B.BackEndBankingSystemApplicationTests : Starting BackEndBankingSystemApplicationTests using Java 21.0.2 with PID 11072 (started by Admn in C:\Back_End_Banking_System\Back_End_Banking_System)
+2024-12-24T21:07:10.419+02:00 DEBUG 11072 --- [main] b.B.BackEndBankingSystemApplicationTests : Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-24T21:07:10.426+02:00  INFO 11072 --- [main] b.B.BackEndBankingSystemApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2024-12-24T21:07:16.080+02:00  INFO 11072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-24T21:07:16.362+02:00  INFO 11072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 247 ms. Found 5 JPA repository interfaces.
+2024-12-24T21:07:18.147+02:00  INFO 11072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-24T21:07:18.436+02:00  INFO 11072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-24T21:07:18.594+02:00  INFO 11072 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-24T21:07:19.920+02:00  INFO 11072 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-24T21:07:20.045+02:00  INFO 11072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-24T21:07:20.645+02:00  INFO 11072 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2520aa05
+2024-12-24T21:07:20.650+02:00  INFO 11072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-24T21:07:20.769+02:00  WARN 11072 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-24T21:07:20.823+02:00  INFO 11072 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-24T21:07:25.261+02:00  INFO 11072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-24T21:07:25.772+02:00  INFO 11072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-24T21:07:26.565+02:00  INFO 11072 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-24T21:07:28.190+02:00  WARN 11072 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-24T21:07:28.299+02:00  INFO 11072 --- [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-24T21:07:28.301+02:00  WARN 11072 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2024-12-24T21:07:29.052+02:00 DEBUG 11072 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-24T21:07:29.967+02:00  INFO 11072 --- [main] b.B.BackEndBankingSystemApplicationTests : Started BackEndBankingSystemApplicationTests in 21.429 seconds (process running for 24.145)
+2024-12-24T21:07:32.271+02:00  INFO 11072 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-24T21:07:32.286+02:00  INFO 11072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-24T21:07:32.344+02:00  INFO 11072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
